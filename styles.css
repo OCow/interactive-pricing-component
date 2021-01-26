@@ -1,0 +1,133 @@
+body {
+  font-family: "Manrope", sans-serif;
+  background-image: url("./images/bg-pattern.svg");
+  background-size: 300%;
+  background-repeat: no-repeat;
+  background-color: hsl(230, 100%, 90%);
+}
+
+.headline-container {
+  height: 12rem;
+  width: 80%;
+
+  background-image: url("./images/pattern-circles.svg");
+  background-size: 50% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  margin: auto;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: hsl(0, 0%, 100%);
+  width: 90%;
+  margin: auto;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: larger;
+  padding-top: 3rem;
+  color: hsl(227, 35%, 25%);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: hsl(225, 20%, 60%);
+}
+
+.details-headline {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05rem;
+}
+
+.slider-container {
+  text-align: center;
+}
+
+/* only img tags within div with class slider-container */
+div.slider-container > img {
+  width: 90%;
+}
+
+.price-duration-container {
+  display: flex;
+  align-items: center;
+}
+
+.price-duration-container > * {
+  margin: 0;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+  margin-right: 0.5rem;
+}
+
+.billing-container {
+  width: 90%;
+  margin-top: 2rem;
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+div.toggler-container > img {
+  width: 80%;
+}
+
+.info-text {
+  font-size: small;
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.discount-field {
+  background-color: hsl(14, 92%, 95%);
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 50px;
+}
+
+.discount-field > p {
+  color: hsl(15, 100%, 70%);
+  font-weight: 800;
+}
+
+hr {
+  width: 98%;
+  margin-bottom: 2rem;
+}
+
+p.info-text > img {
+  width: 15px;
+  margin-right: 1rem;
+}
+
+.btn-cta {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  color: hsl(226, 100%, 87%);
+  background-color: hsl(227, 35%, 25%);
+  width: 50%;
+  height: 2.5rem;
+  border: none;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+button {
+  font-family: "Manrope", sans-serif;
+}
