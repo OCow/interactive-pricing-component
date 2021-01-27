@@ -131,3 +131,93 @@ p.info-text > img {
 button {
   font-family: "Manrope", sans-serif;
 }
+
+/* The switch - the box around the slider. 
+Like literally the whole thing. Within this 
+switch there is the rounded background of the 
+slider and also the circle within it. */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  /* background-color: green;  */
+}
+
+/* Hide default HTML checkbox 
+By positioning the checkbox within the label component, 
+any clicks on the surrounding label will be accepted by 
+the checkbox*/
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  /* this is the background (the one with the color). 
+  In case an element with absolute position is nested 
+  in an element with relative position, the values 
+  top left right bottom determine the distance from the 
+  border of the relative positioned element   */
+  position: absolute;
+  cursor: pointer;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #987;
+  /*transition duration for changing the color  */
+  transition: 0.4s;
+}
+
+/* This is the actual circle. */
+.slider:before {
+  content: "";
+  position: absolute;
+  /* height of switch (34px) - left (4px) - right (4px) */
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  /* transition duration for the circle going from one side 
+  to the other  */
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  /* background color change depending on checked state */
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  /* here I currently do not see what this does... */
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  /* 60 - 26 - 4 - 4  */
+  transform: translateX(26px);
+}
+
+/* Rounded sliders. The selector is logical AND for the 
+classes slider and round.  */
+.slider.round {
+  /* this makes the slider background with rounded corners 
+  Rounded corners which equal the height of the element 
+  make a perfect circle */
+  border-radius: 34px;
+}
+
+/* we added previously content: "" to the css selector 
+.slider:before. All styling which is added to a ::before 
+selector will be applied to the value which was specified 
+via content 
+":"  - pseudo class 
+"::" - pseudo element */
+.slider.round::before {
+  /* this is the actual circle */
+  border-radius: 50%;
+}
