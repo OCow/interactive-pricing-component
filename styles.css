@@ -56,10 +56,6 @@ p {
 
 .slider-container {
   text-align: center;
-}
-
-/* only img tags within div with class slider-container */
-div.slider-container > img {
   width: 90%;
 }
 
@@ -196,7 +192,7 @@ button {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: #d2ddf7;
+  background-color: #cdd7ee;
   /*transition duration for changing the color  */
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -260,4 +256,43 @@ input:checked + .slider:before {
 /* ############# SLIDER END ########################## */
 /* ################################################### */
 /* ################################################### */
+input[type="range"] {
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  /* Specific width is required for Firefox. */
+  background: transparent;
+  /* Otherwise white in Chrome */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* Special styling for WebKit/Blink */
+input[type="range"]::-webkit-slider-thumb {
+  height: 36px;
+  width: 36px;
+  border-radius: 36px;
+  cursor: pointer;
+  background-color: #10d5c2;
+  background-image: url("./images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: 0px 8px 10px #88f6eb;
+          box-shadow: 0px 8px 10px #88f6eb;
+  margin-top: -14px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 9px;
+  cursor: pointer;
+  background: #eaeefb;
+  border-radius: 9px;
+}
 /*# sourceMappingURL=styles.css.map */
