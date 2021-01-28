@@ -3,34 +3,29 @@ body {
   background-image: url("./images/bg-pattern.svg");
   background-size: 300%;
   background-repeat: no-repeat;
-  background-color: #ccd5ff;
+  background-color: hsl(230, 100%, 90%);
 }
 
 .headline-container {
   height: 12rem;
   width: 80%;
+
   background-image: url("./images/pattern-circles.svg");
   background-size: 50% auto;
   background-position: center;
   background-repeat: no-repeat;
+
   text-align: center;
   margin: auto;
 }
 
 .details-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-color: hsl(0, 0%, 100%);
   width: 90%;
   margin: auto;
 }
@@ -39,13 +34,13 @@ h1 {
   font-weight: 800;
   font-size: larger;
   padding-top: 3rem;
-  color: #293356;
+  color: hsl(227, 35%, 25%);
 }
 
 p {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  color: #858fad;
+  color: hsl(225, 20%, 60%);
 }
 
 .details-headline {
@@ -64,12 +59,8 @@ div.slider-container > img {
 }
 
 .price-duration-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .price-duration-container > * {
@@ -79,32 +70,29 @@ div.slider-container > img {
 .price {
   font-size: 2rem;
   font-weight: 800;
-  color: #293356;
+  color: hsl(227, 35%, 25%);
   margin-right: 0.5rem;
 }
 
+$billingContainerSpacing: 3px;
 .billing-container {
   width: 90%;
   max-width: 450px;
   margin-top: 2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
   margin-bottom: 1.5rem;
-  padding: 3px;
-  /* this */
+  //https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
+  padding: $billingContainerSpacing; /* this */
 }
 
+//address direct children of billing-container p and div. In case
+//other elements are added to the container, the code below might
+//have to be adapted
 .billing-container > p,
 .billing-container > div {
-  margin: 3px;
-  /* and that, will result in a 10px gap */
+  margin: $billingContainerSpacing; /* and that, will result in a 10px gap */
 }
 
 .info-text {
@@ -115,15 +103,16 @@ div.slider-container > img {
   margin-bottom: 0.8rem;
 }
 
+//set margin to 0 only for info-text within discount-field
 .discount-field .info-text {
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
-  color: #ff8c66;
+  color: hsl(15, 100%, 70%);
   font-weight: 800;
 }
 
 .discount-field {
-  background-color: #feece7;
+  background-color: hsl(14, 92%, 95%);
   padding-left: 5px;
   padding-right: 5px;
   border-radius: 50px;
@@ -137,8 +126,8 @@ hr {
 .btn-cta {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  color: #bdccff;
-  background-color: #293356;
+  color: hsl(226, 100%, 87%);
+  background-color: hsl(227, 35%, 25%);
   width: 50%;
   max-width: 250px;
   height: 2.5rem;
@@ -157,6 +146,14 @@ button {
 /* ############# SLIDER START ######################## */
 /* ################################################### */
 /* ################################################### */
+$toggleWidth: 45px;
+$toggleHeight: 24px;
+$positionPadding: 4px;
+$circleColor: white;
+$circleDiameter: $toggleHeight - (2 * $positionPadding);
+$toggleBackground1: #d2ddf7;
+$toggleBackground2: #2196f3;
+
 /* The switch - the box around the slider. 
  Like literally the whole thing. Within this 
  switch there is the rounded background of the 
@@ -164,8 +161,8 @@ button {
 .switch {
   position: relative;
   display: inline-block;
-  width: 45px;
-  height: 24px;
+  width: $toggleWidth;
+  height: $toggleHeight;
   /* background-color: green;  */
 }
 
@@ -192,9 +189,8 @@ button {
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: #d2ddf7;
+  background-color: $toggleBackground1;
   /*transition duration for changing the color  */
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -203,32 +199,34 @@ button {
   content: "";
   position: absolute;
   /* height of switch (34px) - left (4px) - right (4px) */
-  left: 4px;
-  bottom: 4px;
-  height: 16px;
-  width: 16px;
-  background-color: white;
+  left: $positionPadding;
+  bottom: $positionPadding;
+  height: $circleDiameter;
+  width: $circleDiameter;
+  background-color: $circleColor;
   /* transition duration for the circle going from one side 
      to the other  */
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
 input:checked + .slider {
   /* background color change depending on checked state */
-  background-color: #2196f3;
+  background-color: $toggleBackground2;
 }
 
 input:focus + .slider {
   /* here I currently do not see what this does... */
-  -webkit-box-shadow: 0 0 1px #2196f3;
-          box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
+//The plus sign selector selects elements that are placed immediately after
+//the specified element but not inside the particular elements.
 input:checked + .slider:before {
   /* 60 - 26 - 4 - 4  */
-  -webkit-transform: translateX(21px);
-          transform: translateX(21px);
+  //   transform: translateX(26px);
+  transform: translateX(
+    $toggleWidth - $circleDiameter - (2 * $positionPadding)
+  );
 }
 
 /* Rounded sliders. The selector is logical AND for the 
@@ -237,7 +235,7 @@ input:checked + .slider:before {
   /* this makes the slider background with rounded corners 
      Rounded corners which equal the height of the element 
      make a perfect circle */
-  border-radius: 24px;
+  border-radius: $toggleHeight;
 }
 
 /* we added previously content: "" to the css selector 
@@ -250,10 +248,8 @@ input:checked + .slider:before {
   /* this is the actual circle */
   border-radius: 50%;
 }
-
 /* ################################################### */
 /* ################################################### */
 /* ############# SLIDER END ########################## */
 /* ################################################### */
 /* ################################################### */
-/*# sourceMappingURL=styles.css.map */
