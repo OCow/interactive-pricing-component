@@ -18,10 +18,12 @@ window.onload = () => {
     //released.
     slider.addEventListener("mousemove", handleSliderEvent);
 
-    //Also listen to change event of slider. This is necessary in case
+    //Also listen to input event of slider. This is necessary in case
     //the user just clicks on the runnable area and now mouse move
     //occurs at all.
-    slider.addEventListener("change", handleSliderEvent);
+    //Listening on "change" event does not work as expected in mobile
+    //view (https://stackoverflow.com/questions/18544890/onchange-event-on-input-type-range-is-not-triggering-in-firefox-while-dragging/33030129)
+    slider.addEventListener("input", handleSliderEvent);
 
     //Fill the slider with the initial value. Setting this in .scss file
     //did not seem to work. In case the .scss file also contains a background
