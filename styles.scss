@@ -119,6 +119,10 @@ hr {
   margin-bottom: 2rem;
 }
 
+.tick {
+  margin-right: 5px;
+}
+
 .btn-cta {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
@@ -143,7 +147,7 @@ button {
 
 /* ################################################### */
 /* ################################################### */
-/* ############# SLIDER START ######################## */
+/* ############# TOGGLER START ####################### */
 /* ################################################### */
 /* ################################################### */
 $toggleWidth: 45px;
@@ -250,7 +254,13 @@ input:checked + .slider:before {
 }
 /* ################################################### */
 /* ################################################### */
-/* ############# SLIDER END ########################## */
+/* ############# TOGGLER END ######################### */
+/* ################################################### */
+/* ################################################### */
+
+/* ################################################### */
+/* ################################################### */
+/* ############# SLIDER START ######################## */
 /* ################################################### */
 /* ################################################### */
 
@@ -264,8 +274,10 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
 
+/* Removes the blue border. You should probably do some 
+  kind of focus styling for accessibility reasons though. */
 input[type="range"]:focus {
-  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  outline: none;
 }
 
 /* Special styling for WebKit/Blink */
@@ -286,9 +298,11 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-webkit-slider-runnable-track {
   height: 9px;
   cursor: pointer;
-  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: hsl(224, 65%, 95%);
   border-radius: 9px;
+  //   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  // background: hsl(224, 65%, 95%);
+  // background: red;
+  // background-color: red;
 }
 
 // https://codepen.io/ryanttb/pen/fHyEJ
@@ -298,3 +312,9 @@ input[type="range"]::-webkit-slider-runnable-track {
 //   //   background: hsl(224, 65%, 95%);
 //   //   background: red;
 // }
+
+/* ################################################### */
+/* ################################################### */
+/* ############# SLIDER END ########################## */
+/* ################################################### */
+/* ################################################### */
