@@ -125,6 +125,7 @@ hr {
 }
 
 .btn-cta {
+  cursor: pointer;
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   color: hsl(226, 100%, 87%);
@@ -157,7 +158,7 @@ $positionPadding: 4px;
 $circleColor: white;
 $circleDiameter: $toggleHeight - (2 * $positionPadding);
 $toggleBackground1: hsl(223, 50%, 87%);
-$toggleBackground2: #2196f3;
+$toggleBackground2: hsl(174, 77%, 80%);
 
 /* The switch - the box around the slider. 
  Like literally the whole thing. Within this 
@@ -169,12 +170,6 @@ $toggleBackground2: #2196f3;
   width: $toggleWidth;
   height: $toggleHeight;
 }
-
-// .toggler-container:hover {
-//   // box-shadow: 10 10 20 red;
-//   // background-color: red;
-//   box-shadow: 0px 0px 20px #2196f3;
-// }
 
 /* Hide default HTML checkbox 
    By positioning the checkbox within the label component, 
@@ -226,7 +221,7 @@ input:checked + .slider {
 
 input:focus + .slider {
   /* here I currently do not see what this does... */
-  box-shadow: 0 0 1px #2196f3;
+  // box-shadow: 0 0 1px #2196f3;
 }
 
 //The plus sign selector selects elements that are placed immediately after
@@ -249,7 +244,8 @@ input:checked + .slider:before {
 }
 
 .slider.round:hover {
-  box-shadow: 0px 0px 15px hsl(174, 86%, 45%);
+  // box-shadow: 0px 0px 15px hsl(174, 86%, 45%);
+  background-color: hsl(174, 86%, 45%);
 }
 
 /* we added previously content: "" to the css selector 
@@ -302,10 +298,14 @@ input[type="range"]::-webkit-slider-thumb {
   background-repeat: no-repeat;
   background-position: center;
   margin-top: -14px; //position the thumb vertically
+
+  //transition duration will be used for hover state (see below)
+  transition: 0.4s;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  box-shadow: 0px 0px 20px hsl(174, 86%, 75%);
+  // box-shadow: 0px 0px 20px hsl(174, 86%, 75%);
+  background-color: hsl(185, 75%, 45%);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
