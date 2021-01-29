@@ -168,8 +168,13 @@ $toggleBackground2: #2196f3;
   display: inline-block;
   width: $toggleWidth;
   height: $toggleHeight;
-  /* background-color: green;  */
 }
+
+// .toggler-container:hover {
+//   // box-shadow: 10 10 20 red;
+//   // background-color: red;
+//   box-shadow: 0px 0px 20px #2196f3;
+// }
 
 /* Hide default HTML checkbox 
    By positioning the checkbox within the label component, 
@@ -243,6 +248,10 @@ input:checked + .slider:before {
   border-radius: $toggleHeight;
 }
 
+.slider.round:hover {
+  box-shadow: 0px 0px 15px hsl(174, 86%, 45%);
+}
+
 /* we added previously content: "" to the css selector 
    .slider:before. All styling which is added to a ::before 
    selector will be applied to the value which was specified 
@@ -292,8 +301,11 @@ input[type="range"]::-webkit-slider-thumb {
   background-image: url("./images/icon-slider.svg");
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: 0px 8px 10px hsl(174, 86%, 75%);
   margin-top: -14px; //position the thumb vertically
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 0px 0px 20px hsl(174, 86%, 75%);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {

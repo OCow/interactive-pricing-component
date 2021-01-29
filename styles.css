@@ -171,7 +171,6 @@ button {
   display: inline-block;
   width: 45px;
   height: 24px;
-  /* background-color: green;  */
 }
 
 /* Hide default HTML checkbox 
@@ -245,6 +244,11 @@ input:checked + .slider:before {
   border-radius: 24px;
 }
 
+.slider.round:hover {
+  -webkit-box-shadow: 0px 0px 15px #10d5c2;
+          box-shadow: 0px 0px 15px #10d5c2;
+}
+
 /* we added previously content: "" to the css selector 
    .slider:before. All styling which is added to a ::before 
    selector will be applied to the value which was specified 
@@ -295,9 +299,12 @@ input[type="range"]::-webkit-slider-thumb {
   background-image: url("./images/icon-slider.svg");
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-box-shadow: 0px 8px 10px #88f6eb;
-          box-shadow: 0px 8px 10px #88f6eb;
   margin-top: -14px;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  -webkit-box-shadow: 0px 0px 20px #88f6eb;
+          box-shadow: 0px 0px 20px #88f6eb;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
