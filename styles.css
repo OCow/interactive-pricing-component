@@ -150,6 +150,10 @@ hr {
   border-radius: 50px;
 }
 
+.btn-cta:hover {
+  color: white;
+}
+
 button {
   font-family: "Manrope", sans-serif;
 }
