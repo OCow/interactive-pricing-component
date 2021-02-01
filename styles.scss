@@ -1,9 +1,17 @@
 body {
   font-family: "Manrope", sans-serif;
   background-image: url("./images/bg-pattern.svg");
-  background-size: 300%;
+  background-size: auto;
   background-repeat: no-repeat;
   background-color: hsl(230, 100%, 90%);
+
+  @media (min-width: 600px) {
+    //cheating for a simple "line" here, so that the
+    //part of the rounded corner will not be visible at all
+    background-size: 5000px;
+    background-position-x: -800px;
+    background-position-y: -1150px;
+  }
 }
 
 .headline-container {

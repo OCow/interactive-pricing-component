@@ -1,9 +1,17 @@
 body {
   font-family: "Manrope", sans-serif;
   background-image: url("./images/bg-pattern.svg");
-  background-size: 300%;
+  background-size: auto;
   background-repeat: no-repeat;
   background-color: #ccd5ff;
+}
+
+@media (min-width: 600px) {
+  body {
+    background-size: 5000px;
+    background-position-x: -800px;
+    background-position-y: -1150px;
+  }
 }
 
 .headline-container {
