@@ -40,6 +40,39 @@ body {
   margin: auto;
 }
 
+.container-details-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.container-details-1-headline {
+  @media (min-width: 600px) {
+    order: 1;
+    width: 50%;
+  }
+}
+
+.container-details-1-slider {
+  @media (min-width: 600px) {
+    order: 3;
+  }
+}
+
+.container-details-1-price {
+  @media (min-width: 600px) {
+    width: 30%;
+    order: 2;
+  }
+}
+
 h1 {
   font-weight: 800;
   font-size: larger;
