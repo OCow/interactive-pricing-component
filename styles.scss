@@ -19,11 +19,9 @@ body {
   width: 80%;
 
   background-image: url("./images/pattern-circles.svg");
-  // background-size: 50% auto;
   background-size: 150px;
   background-position: center;
   background-repeat: no-repeat;
-
   text-align: center;
   margin: auto;
 }
@@ -35,6 +33,7 @@ body {
 
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
   width: 90%;
   max-width: 550px;
   margin: auto;
@@ -53,6 +52,11 @@ body {
   }
 }
 
+//the details like pageview, price, and the slider
+//are displayed either in column or row. On wider
+//screen the price must be displayed prior to slider,
+//therefore change the order of the items depending
+//on size.
 .container-details-1-headline {
   @media (min-width: 600px) {
     order: 1;
